@@ -1,29 +1,18 @@
 package units;
 
-public class Unit<E extends Enum<E>>  {
+public class Unit<E extends Enum<E>> {
 	public double value;
 	public final E unit;
-	
 
-	
-	
 	public Unit(double value, E unit) {
 		this.value = value;
 		this.unit = unit;
 	}
 
-	
-
-
-
 	public double getData() {
-	return  this.value * this.unit; 
-}
+		return this.value * this.unit;
+	}
 
-
-
-	
-	
 //	public ULength unitLength;
 //	public UWeight	unitWeight;
 //	
