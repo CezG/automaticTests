@@ -9,6 +9,9 @@ public abstract class AbstractUnit {
 	}
 	
 	public abstract double getData();
-	public abstract double convertTo();
+//	public abstract <E extends Enum<E>> double convertTo(E unit) throws InstantiationException, IllegalAccessException;
+	public abstract void showData();
+	
+	
 
 }
