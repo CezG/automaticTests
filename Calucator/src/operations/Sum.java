@@ -15,7 +15,8 @@ public class Sum {
 		return result / unit.converter;
 	}
 
-	public double sum(EnumWeight unit, Weight... table) {
+	public double sum(EnumWeight unit, Weight... table) throws IllegalArgumentException {
+		if(table ==  null) throw new IllegalArgumentException("There is no arguments");
 		double result = 0;
 		for (Weight x : table) {
 			result += x.getData();

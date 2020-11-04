@@ -53,6 +53,7 @@ class SumTest {
 		// assertThat(result.m, 3.0);
 		assertEquals(2, s.sum(EnumLength.KM, l1, l2), "1km + 1000m = 2km");
 		assertEquals(2000, s.sum(EnumLength.M, l1, l2), "1km + 1000m = 2000 m");
+		assertEquals(null, s.sum(EnumLength.M, null), "Should throw that there isn't any arguments");
 //		assertEquals(result2,result);
 //		assertEquals(result1.m,result.m,0.001);
 //		assertEquals(3,l1.dm,0.001);
