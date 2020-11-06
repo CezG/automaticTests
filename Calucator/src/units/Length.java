@@ -50,11 +50,11 @@ public class Length extends AbstractUnit {
 //		return  r/ (double)unit.getDeclaringClass().getConstructors();
 //	}
 
-	public static void main(String[] args) {
-		Length l = new Length(5, EnumLength.KM);
-		l.showData();
-		double su = l.convertTo(EnumLength.DM);
-		System.out.println(su);
-	}
+//	public static void main(String[] args) {
+//		Length l = new Length(5, EnumLength.KM);
+//		l.showData();
+//		double su = l.convertTo(EnumLength.DM);
+//		System.out.println(su);
+//	}
 
 }

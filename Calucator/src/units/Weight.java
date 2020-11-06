@@ -29,6 +29,10 @@ public class Weight extends AbstractUnit{
 	public static void main(String[] args) {
 		Weight l = new Weight(7, EnumWeight.KG);
 		l.showData();
+		Weight l2 = new Weight(1, EnumWeight.DAG);
+		l2.showData();
+		
+		System.out.println(l2.convertTo(EnumWeight.G));
 		double su = l.convertTo(EnumWeight.T);
 		System.out.println(su);
 
