@@ -1,6 +1,8 @@
 package units;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 import org.junit.After;
 import org.junit.Before;
@@ -28,6 +30,8 @@ public class LengthTest {
 	void getDataTest() {
 		assertEquals(1000, l1.getData(), "value * unitValue = value in [m]");
 		assertEquals(1000, l2.getData(), "value * unitValue = value in [m]");
+		assertNotNull(l2.getData());
+		assertNotNull(l1.getData());
 
 	}
 
@@ -36,6 +40,8 @@ public class LengthTest {
 		assertEquals(10000, l1.convertTo(EnumLength.DM), "1 km = 10000 dm");
 		assertEquals(1000, l1.convertTo(EnumLength.M), "1 km = 1000 m");
 		assertEquals(1000000, l1.convertTo(EnumLength.MM), "1 km = 1000000 m");
+		assertEquals(l1.convertTo(EnumLength.M), l1.getData());
+		assertNotSame(l1.convertTo(EnumLength.M), l1.getData());
 
 	}
 

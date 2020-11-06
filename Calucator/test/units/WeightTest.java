@@ -46,7 +46,5 @@ public class WeightTest {
 		assertNotSame(w1.convertTo(EnumWeight.KG), w1.getData());
 
 	}
-	
-
 
 }

@@ -2,6 +2,7 @@ package operations;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 import org.junit.After;
 import org.junit.Before;
@@ -54,6 +55,7 @@ class SumTest {
 		assertEquals(2, s.sum(EnumWeight.KG, w1, w2), "1kg + 1000g = 2kg");
 		assertEquals(2000, s.sum(EnumWeight.G, w1, w2), "1kg + 1000g = 2000 g");
 		assertNotNull(s.sum(EnumWeight.G, w1, w2));
+		assertNotSame(2000, s.sum(EnumWeight.G, w1, w2));
 
 	}
 
