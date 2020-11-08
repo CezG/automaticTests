@@ -36,7 +36,7 @@ public class WeightTest {
 	}
 
 	@Test
-	void converToTest() {
+	void converToEqualsTest() {
 		assertEquals(0.00001, w1.convertTo(EnumWeight.T), "1 dag = 0.0001 tony");
 		assertEquals(0.01, w1.convertTo(EnumWeight.KG), "1 dag = 0.1 kg");
 		assertEquals(10, w1.convertTo(EnumWeight.G), "1 dag = 10 g");
