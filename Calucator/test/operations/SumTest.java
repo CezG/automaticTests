@@ -1,5 +1,6 @@
 package operations;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -60,39 +61,35 @@ class SumTest {
 		assertNotSame(2000, s.sum(EnumWeight.G, w1, w2));
 
 	}
-	
+
 	@Test
-    void sumWeightCheckExceptionTest() {
-        Boolean check;
-        try {
-        	s.sum(EnumWeight.KG);
-            check = false;
-        }
-        catch (IllegalArgumentException e ) {
-            System.out.println(e.getMessage());
-            check = true;
-        }
-        assertNotEquals(false, check);
-    }
-	
+	void sumWeightCheckExceptionTest() {
+		Boolean check;
+		try {
+			s.sum(EnumWeight.KG);
+			check = false;
+		} catch (IllegalArgumentException e) {
+			check = true;
+		}
+		assertNotEquals(false, check);
+	}
+
 	@Test
-    void sumLengthCheckExceptionTest() {
-        Boolean check =false;
-        try {
-        	s.sum(EnumLength.KM);
-//            check = false;
-        }
-        catch (IllegalArgumentException e ) {
-            System.out.println("uda³o siê");
-            check = true;
-        }
-        System.out.println(s.sum(EnumLength.KM));
-        assertNotEquals(false, check);
-    }
+	void sumLengthCheckExceptionTest() {
+		Boolean check;
+		try {
+			s.sum(EnumLength.KM);
+			check = false;
+		} catch (IllegalArgumentException e) {
+			check = true;
+		}
+		assertTrue(check);
+	}
+
 	@Test
-    void sth() {
-		assertThrows(IllegalArgumentException.class,() -> s.sum(EnumWeight.KG), "nie uda³o siê");
-        
+	void sumLengthCheckExceptionTest2() {
+		assertThrows(IllegalArgumentException.class, () -> s.sum(EnumLength.KM), "nie uda³o siê");
+
 	}
 
 }

@@ -8,29 +8,31 @@ import units.Weight;
 public class Sum {
 
 	public double sum(EnumLength unit, Length... table) throws IllegalArgumentException {
-		try {
-			if(table.length ==  0 ) throw new IllegalArgumentException("There is no arguments");
-		}catch(IllegalArgumentException e){
-			System.out.println(e.getMessage());
-		}
+
 		double result = 0;
-		for (Length x : table) {
-			result += x.getData();
+		if (table.length != 0) {
+			for (Length x : table) {
+				result += x.getData();
+			}
+			return result / unit.converter;
+
+		} else {
+			throw new IllegalArgumentException("There is no arguments");
 		}
-		return result / unit.converter;
 	}
 
 	public double sum(EnumWeight unit, Weight... table) throws IllegalArgumentException {
-		try {
-			if(table.length ==  0 ) throw new IllegalArgumentException("There is no arguments");
-		}catch(IllegalArgumentException e){
-			System.out.println(e.getMessage());
+
+		if (table.length != 0) {
+			double result = 0;
+			for (Weight x : table) {
+				result += x.getData();
+			}
+			return result / unit.converter;
+		} else {
+			throw new IllegalArgumentException("There is no arguments");
 		}
-		double result = 0;
-		for (Weight x : table) {
-			result += x.getData();
-		}
-		return result / unit.converter;
+
 	}
 
 //	public static void main(String[] args) {
