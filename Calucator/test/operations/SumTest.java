@@ -1,8 +1,10 @@
 package operations;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.After;
 import org.junit.Before;
@@ -57,6 +59,40 @@ class SumTest {
 		assertNotNull(s.sum(EnumWeight.G, w1, w2));
 		assertNotSame(2000, s.sum(EnumWeight.G, w1, w2));
 
+	}
+	
+	@Test
+    void sumWeightCheckExceptionTest() {
+        Boolean check;
+        try {
+        	s.sum(EnumWeight.KG);
+            check = false;
+        }
+        catch (IllegalArgumentException e ) {
+            System.out.println(e.getMessage());
+            check = true;
+        }
+        assertNotEquals(false, check);
+    }
+	
+	@Test
+    void sumLengthCheckExceptionTest() {
+        Boolean check =false;
+        try {
+        	s.sum(EnumLength.KM);
+//            check = false;
+        }
+        catch (IllegalArgumentException e ) {
+            System.out.println("uda³o siê");
+            check = true;
+        }
+        System.out.println(s.sum(EnumLength.KM));
+        assertNotEquals(false, check);
+    }
+	@Test
+    void sth() {
+		assertThrows(IllegalArgumentException.class,() -> s.sum(EnumWeight.KG), "nie uda³o siê");
+        
 	}
 
 }

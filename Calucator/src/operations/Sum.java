@@ -7,7 +7,12 @@ import units.Weight;
 
 public class Sum {
 
-	public double sum(EnumLength unit, Length... table) {
+	public double sum(EnumLength unit, Length... table) throws IllegalArgumentException {
+		try {
+			if(table.length ==  0 ) throw new IllegalArgumentException("There is no arguments");
+		}catch(IllegalArgumentException e){
+			System.out.println(e.getMessage());
+		}
 		double result = 0;
 		for (Length x : table) {
 			result += x.getData();
@@ -16,7 +21,11 @@ public class Sum {
 	}
 
 	public double sum(EnumWeight unit, Weight... table) throws IllegalArgumentException {
-		if(table ==  null) throw new IllegalArgumentException("There is no arguments");
+		try {
+			if(table.length ==  0 ) throw new IllegalArgumentException("There is no arguments");
+		}catch(IllegalArgumentException e){
+			System.out.println(e.getMessage());
+		}
 		double result = 0;
 		for (Weight x : table) {
 			result += x.getData();
@@ -25,6 +34,7 @@ public class Sum {
 	}
 
 //	public static void main(String[] args) {
+//		
 //		Length u1 = new Length(5, EnumLength.M);
 //		u1.showData();
 //		Length u2 = new Length(7, EnumLength.KM);
@@ -32,6 +42,8 @@ public class Sum {
 //		Sum s = new Sum();
 //		double r1 = s.sum(EnumLength.KM, u1, u2);
 //		System.out.println(r1);
+//		
+//		
 //
 //		Weight u3 = new Weight(6, EnumWeight.KG);
 //		u3.showData();
@@ -40,6 +52,8 @@ public class Sum {
 //		Sum s2 = new Sum();
 //		double r2 = s2.sum(EnumWeight.KG, u3, u4);
 //		System.out.println(r2);
+//		
+//		s2.sum(EnumWeight.KG );
 //	}
 
 }
