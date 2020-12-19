@@ -34,25 +34,25 @@ public class Multiplication {
 
 	}
 
-	public static void main(String[] args) {
-
-		Length u1 = new Length(5, EnumLength.KM);
-		u1.showData();
-		Length u2 = new Length(7000, EnumLength.M);
-		u2.showData();
-		Multiplication m = new Multiplication();
-		double r1 = m.multiplication(EnumLength.KM, u1, u2);
-		System.out.println(r1);
-
-		Weight u3 = new Weight(2, EnumWeight.KG);
-		u3.showData();
-		Weight u4 = new Weight(1, EnumWeight.G);
-		u4.showData();
-		Multiplication m2 = new Multiplication();
-		double r2 = m2.multiplication(EnumWeight.G, u3, u4);
-		System.out.println(r2);
-
-		m2.multiplication(EnumWeight.G);
-	}
+//	public static void main(String[] args) {
+//
+//		Length u1 = new Length(5, EnumLength.KM);
+//		u1.showData();
+//		Length u2 = new Length(7000, EnumLength.M);
+//		u2.showData();
+//		Multiplication m = new Multiplication();
+//		double r1 = m.multiplication(EnumLength.KM, u1, u2);
+//		System.out.println(r1);
+//
+//		Weight u3 = new Weight(2, EnumWeight.KG);
+//		u3.showData();
+//		Weight u4 = new Weight(1, EnumWeight.G);
+//		u4.showData();
+//		Multiplication m2 = new Multiplication();
+//		double r2 = m2.multiplication(EnumWeight.G, u3, u4);
+//		System.out.println(r2);
+//
+//		m2.multiplication(EnumWeight.G);
+//	}
 
 }
