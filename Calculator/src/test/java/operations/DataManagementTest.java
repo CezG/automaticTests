@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.simple.parser.JSONParser;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
@@ -52,10 +53,13 @@ public class DataManagementTest {
 		dm.writeAllData(l1);
 	}
 
+	@DisplayName("Testing json and strict with true and false")
 	@Test
 	void readAllDataTest() throws JSONException {
 
 		JSONAssert.assertEquals("{\"unit\":\"KM\",\"data\":1000.0,\"value\":1.0,\"unitValue\":1000.0}", jsonString, true);
+		JSONAssert.assertEquals("{\"unit\":\"KM\",\"value\":1.0,\"unitValue\":1000.0}", jsonString, false);
+		JSONAssert.assertNotEquals("{\"unit\":\"KM\",\"value\":1.0,\"unitValue\":1000.0}", jsonString, true);
 		JSONAssert.assertNotEquals("{\"unit\":\"KM\",\"data\":2000.0,\"value\":1.0,\"unitValue\":2000.0}", jsonString, true);
 		assertNotNull(jsonString);
 	}
