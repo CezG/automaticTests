@@ -31,21 +31,16 @@ public class DataManagementTest {
         w1 = new Weight(1, EnumWeight.KG);
         w2 = new Weight(1000, EnumWeight.G);
         dm.writeAllData(l1);
-
-
     }
 
     @After
     public void tearDown() {
-
         l1 = null;
         l2 = null;
         w1 = null;
         w2 = null;
         dm = null;
-
     }
-
 
     @DisplayName("Testing reading json which was created and strict with true")
     @Test
