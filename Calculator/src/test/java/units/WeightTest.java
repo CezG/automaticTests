@@ -3,6 +3,9 @@ package units;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.BDDMockito.*;
 
 import org.junit.After;
 import org.junit.Before;
@@ -32,6 +35,23 @@ public class WeightTest {
 		assertEquals(1000000, w2.getData(), "value * unitValue = value in [kg]");
 		assertNotNull(w2.getData());
 		assertNotNull(w1.getData());
+
+	}
+	@Test
+	void getDataTest_with_mock_using_when() {
+		Weight w = mock(Weight.class);
+		when(w.getData()).thenReturn(0.01);
+		assertEquals(0.01, w.getData(), "simulate object by mock");
+		assertNotNull(w.getData());
+
+	}
+
+	@Test
+	void getDataTest_with_mock_using_given() {
+		Weight w = mock(Weight.class);
+		given(w.getData()).willReturn(0.01);
+		assertEquals(0.01, w.getData(), "simulate object by mock");
+		assertNotNull(w.getData());
 
 	}
 
